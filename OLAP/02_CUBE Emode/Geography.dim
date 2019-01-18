@@ -1,0 +1,287 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5f09c5d1-b39b-44b0-8dd7-8c2ecbc45a82" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Geography</ID>
+  <Name>Geography</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1171" scrolltop="238" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="7329" y="13520" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="Geography" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3995" height="5874" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00009b0f0000f2160000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_OUTLET_LOOKUP" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1171</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>238</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="117">
+            <Shape Id="SHOP CODE" Expanded="false">
+              <Attributes>
+                <Attribute Id="SHOP CODE" />
+                <Attribute Id="ADDRESS 1" />
+                <Attribute Id="ZIP CODE" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="SHOP NAME" Expanded="false">
+              <Attributes>
+                <Attribute Id="SHOP NAME" />
+              </Attributes>
+              <Position x="171" y="20" />
+            </Shape>
+            <Shape Id="CITY" Expanded="false">
+              <Attributes>
+                <Attribute Id="CITY" />
+              </Attributes>
+              <Position x="322" y="20" />
+            </Shape>
+            <Shape Id="STATE" Expanded="false">
+              <Attributes>
+                <Attribute Id="STATE" />
+              </Attributes>
+              <Position x="473" y="20" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="4e7203b6-2355-4d84-bacf-f3b10fe8e785">
+    <DataSourceViewID>EMODE</DataSourceViewID>
+  </Source>
+  <UnknownMember>Hidden</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="b9596b05-55cc-4e29-a079-d8de20780589">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="d6ea83a6-13e5-4c7b-aec0-c44f77b1fff6">
+      <ID>SHOP CODE</ID>
+      <Name>SHOP CODE</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9023f3aa-6162-41ca-b70a-e5e39c518a27">
+          <DataType>Double</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="77a616f5-d0d4-44d2-bb1f-3dae84860fc9">
+            <TableID>dbo_OUTLET_LOOKUP</TableID>
+            <ColumnID>SHOP_CODE</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="60316520-cca0-4221-a214-55f55b8f62f0">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="1134565f-4a7b-415f-870d-db0b4a5901e4">
+          <TableID>dbo_OUTLET_LOOKUP</TableID>
+          <ColumnID>SHOP_CODE</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="ace72d06-f70f-4736-9957-ab43ac5951c5">
+          <AttributeID>ADDRESS 1</AttributeID>
+          <Name>ADDRESS 1</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="59e997e1-13e0-41dc-9451-e585e6d93fc3">
+          <AttributeID>ZIP CODE</AttributeID>
+          <Name>ZIP CODE</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d00deaa0-9a6e-4a47-83e4-513ce3a3bc48">
+          <AttributeID>SHOP NAME</AttributeID>
+          <Name>SHOP NAME</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ValueColumn dwd:design-time-name="d49a1f64-6924-40a2-a0ed-f216e336f676">
+        <DataType>WChar</DataType>
+        <DataSize>30</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="4fd154bd-4c5b-4502-bcc6-8093431337ed">
+          <TableID>dbo_OUTLET_LOOKUP</TableID>
+          <ColumnID>SHOP_NAME</ColumnID>
+        </Source>
+      </ValueColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="dbb8eb04-609e-4d07-ab76-0538dafd72db">
+      <ID>CITY</ID>
+      <Name>CITY</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="08519a6c-908d-4145-b44b-387201a37dc6">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="402bb8e1-c519-4ff7-84d7-66f108c11995">
+            <TableID>dbo_OUTLET_LOOKUP</TableID>
+            <ColumnID>CITY</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="8387c6b1-efc7-482d-a57b-b591daa58264">
+          <AttributeID>STATE</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>STATE</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <AttributeHierarchyDisplayFolder>Location</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="09b854d2-a83c-47a6-9425-5a3708f792b1">
+      <ID>STATE</ID>
+      <Name>STATE</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="eb3ea026-bbab-4930-8235-087313cc2a4f">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2b08490b-b150-46f5-a78e-b517a22936b0">
+            <TableID>dbo_OUTLET_LOOKUP</TableID>
+            <ColumnID>STATE</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyDisplayFolder>Location</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2055d97e-89fa-4100-bb43-63445fb56ba5">
+      <ID>ADDRESS 1</ID>
+      <Name>ADDRESS 1</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a0bde336-94c4-4d9c-ae9b-37b703c8bb4e">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6858d56a-a7f0-4a7f-9798-f2293ca2ba1c">
+            <TableID>dbo_OUTLET_LOOKUP</TableID>
+            <ColumnID>ADDRESS_1</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyDisplayFolder>Location</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3101b879-5d3b-41ae-a910-3e485e2c2da9">
+      <ID>ZIP CODE</ID>
+      <Name>ZIP CODE</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c22c67f4-fccb-473b-aa39-9296bb649e2c">
+          <DataType>WChar</DataType>
+          <DataSize>6</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="77ba6057-207d-44c4-b2db-91aac407be7d">
+            <TableID>dbo_OUTLET_LOOKUP</TableID>
+            <ColumnID>ZIP_CODE</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyDisplayFolder>Location</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="15ebd660-f7a8-412a-a4a0-511d2870d572">
+      <ID>SHOP NAME</ID>
+      <Name>SHOP NAME</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f91fbd47-d6f3-4e72-9a06-b2f9d089384d">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="883723f9-52cb-44bf-a8b3-debc05360a1b">
+            <TableID>dbo_OUTLET_LOOKUP</TableID>
+            <ColumnID>SHOP_NAME</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="41fd4a1d-8e5a-421d-bc2a-d39f0847da06">
+          <AttributeID>CITY</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>CITY</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="ce6ece08-2afd-43e2-be53-d452349c00b9">
+      <ID>Hierarchy</ID>
+      <Name>Hierarchy</Name>
+      <Levels>
+        <Level dwd:design-time-name="1efae2fa-126c-470e-9c26-19c64f343ca5">
+          <ID>STATE</ID>
+          <Name>STATE</Name>
+          <SourceAttributeID>STATE</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="5edc23a5-05de-4a6f-995a-86342853a6db">
+          <ID>CITY</ID>
+          <Name>CITY</Name>
+          <SourceAttributeID>CITY</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="fb125bb9-d22e-4ac1-b8bb-b73d31036834">
+          <ID>SHOP NAME</ID>
+          <Name>SHOP NAME</Name>
+          <SourceAttributeID>SHOP NAME</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

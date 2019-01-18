@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Description />
+  <DataSet Name="EMODEDSSET_01">
+    <Query>
+      <DataSourceReference>EMODEDS</DataSourceReference>
+      <CommandText> SELECT NON EMPTY { [Measures].[AMOUNT SOLD] } ON COLUMNS, NON EMPTY { ([Time].[YEAR].[YEAR].ALLMEMBERS * [Time].[QUARTER].[QUARTER].ALLMEMBERS * [Time].[MONTH].[MONTH].ALLMEMBERS * [Time].[MONTH NAME].[MONTH NAME].ALLMEMBERS * [Geography].[STATE].[STATE].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [EMODE OLAP] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>MDX</CommandType>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Time</DimensionName>
+                    <HierarchyName>YEAR</HierarchyName>
+                    <HierarchyUniqueName>[Time].[YEAR]</HierarchyUniqueName>
+                    <LevelName>YEAR</LevelName>
+                    <UniqueName>[Time].[YEAR].[YEAR]</UniqueName>
+                  </ID>
+                  <ItemCaption>YEAR</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Time</DimensionName>
+                    <HierarchyName>QUARTER</HierarchyName>
+                    <HierarchyUniqueName>[Time].[QUARTER]</HierarchyUniqueName>
+                    <LevelName>QUARTER</LevelName>
+                    <UniqueName>[Time].[QUARTER].[QUARTER]</UniqueName>
+                  </ID>
+                  <ItemCaption>QUARTER</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Time</DimensionName>
+                    <HierarchyName>MONTH</HierarchyName>
+                    <HierarchyUniqueName>[Time].[MONTH]</HierarchyUniqueName>
+                    <LevelName>MONTH</LevelName>
+                    <UniqueName>[Time].[MONTH].[MONTH]</UniqueName>
+                  </ID>
+                  <ItemCaption>MONTH</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Time</DimensionName>
+                    <HierarchyName>MONTH NAME</HierarchyName>
+                    <HierarchyUniqueName>[Time].[MONTH NAME]</HierarchyUniqueName>
+                    <LevelName>MONTH NAME</LevelName>
+                    <UniqueName>[Time].[MONTH NAME].[MONTH NAME]</UniqueName>
+                  </ID>
+                  <ItemCaption>MONTH NAME</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Geography</DimensionName>
+                    <HierarchyName>STATE</HierarchyName>
+                    <HierarchyUniqueName>[Geography].[STATE]</HierarchyUniqueName>
+                    <LevelName>STATE</LevelName>
+                    <UniqueName>[Geography].[STATE].[STATE]</UniqueName>
+                  </ID>
+                  <ItemCaption>STATE</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                  <DisplayFolder>Location</DisplayFolder>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>AMOUNT SOLD</MeasureName>
+                    <UniqueName>[Measures].[AMOUNT SOLD]</UniqueName>
+                  </ID>
+                  <ItemCaption>AMOUNT SOLD</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>EMODE OLAP</From>
+            <Filter>
+              <FilterItems />
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties>
+              <IncludeMemberValue>true</IncludeMemberValue>
+            </QueryProperties>
+          </QuerySpecification>
+          <Query>
+            <Statement> SELECT NON EMPTY { [Measures].[AMOUNT SOLD] } ON COLUMNS, NON EMPTY { ([Time].[YEAR].[YEAR].ALLMEMBERS * [Time].[QUARTER].[QUARTER].ALLMEMBERS * [Time].[MONTH].[MONTH].ALLMEMBERS * [Time].[MONTH NAME].[MONTH NAME].ALLMEMBERS * [Geography].[STATE].[STATE].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [EMODE OLAP] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="YEAR">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Time].[YEAR].[YEAR]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="QUARTER">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Time].[QUARTER].[QUARTER]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="MONTH">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Time].[MONTH].[MONTH]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="MONTH_NAME">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Time].[MONTH NAME].[MONTH NAME]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="STATE">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Geography].[STATE].[STATE]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="AMOUNT_SOLD">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[AMOUNT SOLD]" /&gt;</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

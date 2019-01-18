@@ -1,0 +1,1 @@
+dtexec.exe"  /FILE "E:\scripts\ETL\ALL PACKAGES\obj\Development\Package 1.dtsx"  /MAXCONCURRENT "-1"  /CHECKPOINTING OFF > Package_1.log 

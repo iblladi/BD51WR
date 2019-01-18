@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Description />
+  <DataSet Name="EMODEDSSET_03">
+    <Query>
+      <DataSourceReference>EMODEDS</DataSourceReference>
+      <CommandText>SELECT NON EMPTY { [Measures].[QUANTITY SOLD] } ON COLUMNS, NON EMPTY { ([Time].[YEAR].[YEAR].ALLMEMBERS * [Geography].[SHOP NAME].[SHOP NAME].ALLMEMBERS * [Article Color].[FAMILY NAME].[FAMILY NAME].ALLMEMBERS * [Article Color].[CATEGORY].[CATEGORY].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [EMODE OLAP] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>MDX</CommandType>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Time</DimensionName>
+                    <HierarchyName>YEAR</HierarchyName>
+                    <HierarchyUniqueName>[Time].[YEAR]</HierarchyUniqueName>
+                    <LevelName>YEAR</LevelName>
+                    <UniqueName>[Time].[YEAR].[YEAR]</UniqueName>
+                  </ID>
+                  <ItemCaption>YEAR</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Geography</DimensionName>
+                    <HierarchyName>SHOP NAME</HierarchyName>
+                    <HierarchyUniqueName>[Geography].[SHOP NAME]</HierarchyUniqueName>
+                    <LevelName>SHOP NAME</LevelName>
+                    <UniqueName>[Geography].[SHOP NAME].[SHOP NAME]</UniqueName>
+                  </ID>
+                  <ItemCaption>SHOP NAME</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Article Color</DimensionName>
+                    <HierarchyName>FAMILY NAME</HierarchyName>
+                    <HierarchyUniqueName>[Article Color].[FAMILY NAME]</HierarchyUniqueName>
+                    <LevelName>FAMILY NAME</LevelName>
+                    <UniqueName>[Article Color].[FAMILY NAME].[FAMILY NAME]</UniqueName>
+                  </ID>
+                  <ItemCaption>FAMILY NAME</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Article Color</DimensionName>
+                    <HierarchyName>CATEGORY</HierarchyName>
+                    <HierarchyUniqueName>[Article Color].[CATEGORY]</HierarchyUniqueName>
+                    <LevelName>CATEGORY</LevelName>
+                    <UniqueName>[Article Color].[CATEGORY].[CATEGORY]</UniqueName>
+                  </ID>
+                  <ItemCaption>CATEGORY</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>QUANTITY SOLD</MeasureName>
+                    <UniqueName>[Measures].[QUANTITY SOLD]</UniqueName>
+                  </ID>
+                  <ItemCaption>QUANTITY SOLD</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>EMODE OLAP</From>
+            <Filter>
+              <FilterItems />
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties>
+              <IncludeMemberValue>true</IncludeMemberValue>
+            </QueryProperties>
+          </QuerySpecification>
+          <Query>
+            <Statement> SELECT NON EMPTY { [Measures].[QUANTITY SOLD] } ON COLUMNS, NON EMPTY { ([Time].[YEAR].[YEAR].ALLMEMBERS * [Geography].[SHOP NAME].[SHOP NAME].ALLMEMBERS * [Article Color].[FAMILY NAME].[FAMILY NAME].ALLMEMBERS * [Article Color].[CATEGORY].[CATEGORY].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [EMODE OLAP] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="YEAR">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Time].[YEAR].[YEAR]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="SHOP_NAME">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Geography].[SHOP NAME].[SHOP NAME]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="FAMILY_NAME">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Article Color].[FAMILY NAME].[FAMILY NAME]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CATEGORY">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Article Color].[CATEGORY].[CATEGORY]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="QUANTITY_SOLD">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[QUANTITY SOLD]" /&gt;</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

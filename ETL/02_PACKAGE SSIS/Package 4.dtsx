@@ -1,0 +1,2644 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/4/2018 1:43:43 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PC-GI-2012-BDD"
+  DTS:CreatorName="PC-GI-2012-BDD\Administrator"
+  DTS:DTSID="{772F7D5C-20BF-4D5C-BFFD-C7C92802D9DF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3025.39"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package 4"
+  DTS:PackageType="5"
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{342921B9-C3BE-4C90-9C7E-9D844CA9F9F0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Aggregation Data"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{594E1E47-3B40-474D-BCD2-25CDECF661D7}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Aggregation Data"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Aggregation Data\Aggregate"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Aggregate"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Aggregation Data\Aggregate.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Aggregation Data\Aggregate.Inputs[Aggregate Input 1].Columns[YEAR]"
+                      cachedDataType="numeric"
+                      cachedName="YEAR"
+                      cachedPrecision="4"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[YEAR]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\Aggregate.Inputs[Aggregate Input 1].Columns[Quarter]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="Quarter"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Quarter]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\Aggregate.Inputs[Aggregate Input 1].Columns[STATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="STATE"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[STATE]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\Aggregate.Inputs[Aggregate Input 1].Columns[Line]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Line"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Line]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\Aggregate.Inputs[Aggregate Input 1].Columns[CATEGORY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="CATEGORY"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[CATEGORY]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\Aggregate.Inputs[Aggregate Input 1].Columns[Sales Revenue]"
+                      cachedDataType="numeric"
+                      cachedName="Sales Revenue"
+                      cachedPrecision="13"
+                      cachedScale="2"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Sales Revenue]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[YEAR]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[YEAR]"
+                      name="YEAR"
+                      precision="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[YEAR]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[Quarter]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[Quarter]"
+                      name="Quarter">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Quarter]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[STATE]"
+                      name="STATE">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[STATE]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[Line]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[Line]"
+                      name="Line">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Line]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[CATEGORY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[CATEGORY]"
+                      name="CATEGORY">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[CATEGORY]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[Sales Revenue]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[Sales Revenue]"
+                      name="Sales Revenue"
+                      precision="13"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Sales Revenue]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Aggregation Data\Aggregate 1"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Aggregate 1"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Aggregation Data\Aggregate 1.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Inputs[Aggregate Input 1].Columns[YEAR]"
+                      cachedDataType="numeric"
+                      cachedName="YEAR"
+                      cachedPrecision="4"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[YEAR]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Inputs[Aggregate Input 1].Columns[Quarter]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="Quarter"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Quarter]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Inputs[Aggregate Input 1].Columns[MONTH]"
+                      cachedDataType="numeric"
+                      cachedName="MONTH"
+                      cachedPrecision="2"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[MONTH]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Inputs[Aggregate Input 1].Columns[MONTH_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="MONTH_NAME"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[MONTH_NAME]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Inputs[Aggregate Input 1].Columns[Week]"
+                      cachedDataType="numeric"
+                      cachedName="Week"
+                      cachedPrecision="2"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Week]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Inputs[Aggregate Input 1].Columns[CITY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CITY"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[CITY]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Inputs[Aggregate Input 1].Columns[Store name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="Store name"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Store name]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Inputs[Aggregate Input 1].Columns[Sales Revenue]"
+                      cachedDataType="numeric"
+                      cachedName="Sales Revenue"
+                      cachedPrecision="13"
+                      cachedScale="2"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Sales Revenue]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Inputs[Aggregate Input 1].Columns[QUANTITY_SOLD]"
+                      cachedDataType="numeric"
+                      cachedName="QUANTITY_SOLD"
+                      cachedPrecision="13"
+                      cachedScale="2"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[QUANTITY_SOLD]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Inputs[Aggregate Input 1].Columns[MARGIN]"
+                      cachedDataType="numeric"
+                      cachedName="MARGIN"
+                      cachedPrecision="13"
+                      cachedScale="2"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[MARGIN]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[YEAR]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[YEAR]"
+                      name="YEAR"
+                      precision="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[YEAR]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[Quarter]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[Quarter]"
+                      name="Quarter">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Quarter]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[MONTH]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[MONTH]"
+                      name="MONTH"
+                      precision="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[MONTH]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[MONTH_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[MONTH_NAME]"
+                      name="MONTH_NAME">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[MONTH_NAME]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[Week]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[Week]"
+                      name="Week"
+                      precision="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Week]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[CITY]"
+                      name="CITY">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[CITY]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[Store name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[Store name]"
+                      name="Store name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Store name]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[Sales Revenue]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[Sales Revenue]"
+                      name="Sales Revenue"
+                      precision="13"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Sales Revenue]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[QUANTITY_SOLD]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[QUANTITY_SOLD]"
+                      name="QUANTITY_SOLD"
+                      precision="13"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[QUANTITY_SOLD]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[MARGIN]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[MARGIN]"
+                      name="MARGIN"
+                      precision="13"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[MARGIN]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="AGG_YR_QT_RN_ST_LN_CA_SR"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[AGG_YR_QT_RN_ST_LN_CA_SR]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Connections[OleDbConnection]"
+                  connectionManagerID="{70D87222-9BEE-48FA-A8FE-AD6CB940FE04}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[PC-GI-2012-BDD_SQL2016.EMODE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input].Columns[YEAR]"
+                      cachedDataType="numeric"
+                      cachedName="YEAR"
+                      cachedPrecision="4"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input].ExternalColumns[YEAR]"
+                      lineageId="Package\Aggregation Data\Sort.Outputs[Sort Output].Columns[YEAR]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input].Columns[Quarter]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="Quarter"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input].ExternalColumns[QUARTER]"
+                      lineageId="Package\Aggregation Data\Sort.Outputs[Sort Output].Columns[Quarter]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input].Columns[STATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="STATE"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input].ExternalColumns[STATE]"
+                      lineageId="Package\Aggregation Data\Sort.Outputs[Sort Output].Columns[STATE]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input].Columns[Line]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Line"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input].ExternalColumns[LINE]"
+                      lineageId="Package\Aggregation Data\Sort.Outputs[Sort Output].Columns[Line]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input].Columns[CATEGORY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="CATEGORY"
+                      cachedSortKeyPosition="5"
+                      externalMetadataColumnId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input].ExternalColumns[CATEGORY]"
+                      lineageId="Package\Aggregation Data\Sort.Outputs[Sort Output].Columns[CATEGORY]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input].Columns[Sales Revenue]"
+                      cachedDataType="numeric"
+                      cachedName="Sales Revenue"
+                      cachedPrecision="13"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input].ExternalColumns[SALES_REVENUE]"
+                      lineageId="Package\Aggregation Data\Sort.Outputs[Sort Output].Columns[Sales Revenue]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="numeric"
+                      name="ID"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input].ExternalColumns[YEAR]"
+                      dataType="numeric"
+                      name="YEAR"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input].ExternalColumns[QUARTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="QUARTER" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input].ExternalColumns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input].ExternalColumns[LINE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="LINE" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input].ExternalColumns[CATEGORY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="CATEGORY" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input].ExternalColumns[SALES_REVENUE]"
+                      dataType="numeric"
+                      name="SALES_REVENUE"
+                      precision="13"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="AGG_YR_THRU_SN_SR_QT_MA"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[AGG_YR_THRU_SN_SR_QT_MA]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Connections[OleDbConnection]"
+                  connectionManagerID="{70D87222-9BEE-48FA-A8FE-AD6CB940FE04}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[PC-GI-2012-BDD_SQL2016.EMODE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].Columns[YEAR]"
+                      cachedDataType="numeric"
+                      cachedName="YEAR"
+                      cachedPrecision="4"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[YEAR]"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[YEAR]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].Columns[Quarter]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="Quarter"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[QUARTER]"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[Quarter]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].Columns[MONTH]"
+                      cachedDataType="numeric"
+                      cachedName="MONTH"
+                      cachedPrecision="2"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[MONTH]"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[MONTH]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].Columns[MONTH_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="MONTH_NAME"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[MONTH_NAME]"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[MONTH_NAME]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].Columns[Week]"
+                      cachedDataType="numeric"
+                      cachedName="Week"
+                      cachedPrecision="2"
+                      cachedSortKeyPosition="5"
+                      externalMetadataColumnId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[WEEK]"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[Week]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].Columns[CITY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CITY"
+                      cachedSortKeyPosition="6"
+                      externalMetadataColumnId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[CITY]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].Columns[QUANTITY_SOLD]"
+                      cachedDataType="numeric"
+                      cachedName="QUANTITY_SOLD"
+                      cachedPrecision="13"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITY_SOLD]"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[QUANTITY_SOLD]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].Columns[MARGIN]"
+                      cachedDataType="numeric"
+                      cachedName="MARGIN"
+                      cachedPrecision="13"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[MARGIN]"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[MARGIN]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].Columns[Store name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="Store name"
+                      cachedSortKeyPosition="7"
+                      externalMetadataColumnId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[STORE_NAME]"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[Store name]" />
+                    <inputColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].Columns[Sales Revenue]"
+                      cachedDataType="numeric"
+                      cachedName="Sales Revenue"
+                      cachedPrecision="13"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[SALES_REVENUE]"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[Sales Revenue]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="numeric"
+                      name="ID"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[YEAR]"
+                      dataType="numeric"
+                      name="YEAR"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[QUARTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="QUARTER" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[MONTH]"
+                      dataType="numeric"
+                      name="MONTH"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[MONTH_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="MONTH_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[WEEK]"
+                      dataType="numeric"
+                      name="WEEK"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[STORE_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="STORE_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[SALES_REVENUE]"
+                      dataType="numeric"
+                      name="SALES_REVENUE"
+                      precision="13"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITY_SOLD]"
+                      dataType="numeric"
+                      name="QUANTITY_SOLD"
+                      precision="13"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input].ExternalColumns[MARGIN]"
+                      dataType="numeric"
+                      name="MARGIN"
+                      precision="18" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Aggregation Data\Collect Emode Data MS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Collect Emode Data MS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        CYL.[YEAR], 'Q' + CONVERT(varchar(1), CYL.QUARTER) AS 'Quarter', CYL.[MONTH], CYL.MONTH_NAME, CYL.WEEK_IN_YEAR AS 'Week', OLP.STATE, OLP.CITY, OLP.SHOP_NAME AS 'Store name', 
+                         ALP.FAMILY_NAME AS 'Line', ALP.CATEGORY, SFS.AMOUNT_SOLD AS 'Sales Revenue', SFS.QUANTITY_SOLD, SFS.MARGIN
+FROM            SHOP_FACTS AS SFS INNER JOIN
+                         CALENDAR_YEAR_LOOKUP AS CYL ON SFS.WEEK_KEY = CYL.WEEK_KEY INNER JOIN
+                         OUTLET_LOOKUP AS OLP ON SFS.SHOP_CODE = OLP.SHOP_CODE INNER JOIN
+                         ARTICLE_LOOKUP AS ALP ON SFS.ARTICLE_CODE = ALP.ARTICLE_CODE</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Aggregation Data\Collect Emode Data MS.Connections[OleDbConnection]"
+                  connectionManagerID="{70D87222-9BEE-48FA-A8FE-AD6CB940FE04}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[PC-GI-2012-BDD_SQL2016.EMODE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[YEAR]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[YEAR]"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[YEAR]"
+                      name="YEAR"
+                      precision="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Quarter]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[Quarter]"
+                      length="2"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Quarter]"
+                      name="Quarter"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[MONTH]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[MONTH]"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[MONTH]"
+                      name="MONTH"
+                      precision="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[MONTH_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[MONTH_NAME]"
+                      length="10"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[MONTH_NAME]"
+                      name="MONTH_NAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Week]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[Week]"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Week]"
+                      name="Week"
+                      precision="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[STATE]"
+                      length="20"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[STATE]"
+                      name="STATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[CITY]"
+                      length="20"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[CITY]"
+                      name="CITY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Store name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[Store name]"
+                      length="30"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Store name]"
+                      name="Store name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Line]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[Line]"
+                      length="20"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Line]"
+                      name="Line"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[CATEGORY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[CATEGORY]"
+                      length="25"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[CATEGORY]"
+                      name="CATEGORY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Sales Revenue]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[Sales Revenue]"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[Sales Revenue]"
+                      name="Sales Revenue"
+                      precision="13"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[QUANTITY_SOLD]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[QUANTITY_SOLD]"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[QUANTITY_SOLD]"
+                      name="QUANTITY_SOLD"
+                      precision="13"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[MARGIN]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[MARGIN]"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].Columns[MARGIN]"
+                      name="MARGIN"
+                      precision="13"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[YEAR]"
+                      dataType="numeric"
+                      name="YEAR"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[Quarter]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="Quarter" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[MONTH]"
+                      dataType="numeric"
+                      name="MONTH"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[MONTH_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="MONTH_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[Week]"
+                      dataType="numeric"
+                      name="Week"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[Store name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Store name" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[Line]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Line" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[CATEGORY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="CATEGORY" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[Sales Revenue]"
+                      dataType="numeric"
+                      name="Sales Revenue"
+                      precision="13"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[QUANTITY_SOLD]"
+                      dataType="numeric"
+                      name="QUANTITY_SOLD"
+                      precision="13"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output].ExternalColumns[MARGIN]"
+                      dataType="numeric"
+                      name="MARGIN"
+                      precision="13"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[YEAR]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[YEAR]"
+                      name="YEAR"
+                      precision="4" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[Quarter]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[Quarter]"
+                      name="Quarter" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[MONTH]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[MONTH]"
+                      name="MONTH"
+                      precision="2" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[MONTH_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[MONTH_NAME]"
+                      name="MONTH_NAME" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[Week]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[Week]"
+                      name="Week"
+                      precision="2" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[STATE]"
+                      name="STATE" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[CITY]"
+                      name="CITY" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[Store name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[Store name]"
+                      name="Store name" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[Line]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[Line]"
+                      name="Line" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[CATEGORY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[CATEGORY]"
+                      name="CATEGORY" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[Sales Revenue]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[Sales Revenue]"
+                      name="Sales Revenue"
+                      precision="13"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[QUANTITY_SOLD]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[QUANTITY_SOLD]"
+                      name="QUANTITY_SOLD"
+                      precision="13"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[MARGIN]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[MARGIN]"
+                      name="MARGIN"
+                      precision="13"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Aggregation Data\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\Aggregation Data\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Aggregation Data\Multicast.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\Aggregation Data\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Aggregation Data\Multicast.Outputs[Multicast Output 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\Aggregation Data\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Aggregation Data\Multicast.Outputs[Multicast Output 3]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\Aggregation Data\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Aggregation Data\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Aggregation Data\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Aggregation Data\Sort.Inputs[Sort Input].Columns[YEAR]"
+                      cachedDataType="numeric"
+                      cachedName="YEAR"
+                      cachedPrecision="4"
+                      lineageId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[YEAR]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Aggregation Data\Sort.Inputs[Sort Input].Columns[Quarter]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="Quarter"
+                      lineageId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[Quarter]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Aggregation Data\Sort.Inputs[Sort Input].Columns[STATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="STATE"
+                      lineageId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[STATE]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Aggregation Data\Sort.Inputs[Sort Input].Columns[Line]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Line"
+                      lineageId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[Line]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Aggregation Data\Sort.Inputs[Sort Input].Columns[CATEGORY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="CATEGORY"
+                      lineageId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[CATEGORY]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">5</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Aggregation Data\Sort.Inputs[Sort Input].Columns[Sales Revenue]"
+                      cachedDataType="numeric"
+                      cachedName="Sales Revenue"
+                      cachedPrecision="13"
+                      cachedScale="2"
+                      lineageId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[Sales Revenue]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Aggregation Data\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Sort.Outputs[Sort Output].Columns[YEAR]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Sort.Outputs[Sort Output].Columns[YEAR]"
+                      name="YEAR"
+                      precision="4"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[YEAR]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Sort.Outputs[Sort Output].Columns[Quarter]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Aggregation Data\Sort.Outputs[Sort Output].Columns[Quarter]"
+                      name="Quarter"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[Quarter]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Sort.Outputs[Sort Output].Columns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Aggregation Data\Sort.Outputs[Sort Output].Columns[STATE]"
+                      name="STATE"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[STATE]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Sort.Outputs[Sort Output].Columns[Line]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Aggregation Data\Sort.Outputs[Sort Output].Columns[Line]"
+                      name="Line"
+                      sortKeyPosition="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[Line]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Sort.Outputs[Sort Output].Columns[CATEGORY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Aggregation Data\Sort.Outputs[Sort Output].Columns[CATEGORY]"
+                      name="CATEGORY"
+                      sortKeyPosition="5">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[CATEGORY]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Sort.Outputs[Sort Output].Columns[Sales Revenue]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Sort.Outputs[Sort Output].Columns[Sales Revenue]"
+                      name="Sales Revenue"
+                      precision="13"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1].Columns[Sales Revenue]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Aggregation Data\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Aggregation Data\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Aggregation Data\Sort 1.Inputs[Sort Input].Columns[YEAR]"
+                      cachedDataType="numeric"
+                      cachedName="YEAR"
+                      cachedPrecision="4"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[YEAR]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Aggregation Data\Sort 1.Inputs[Sort Input].Columns[Quarter]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="Quarter"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[Quarter]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Aggregation Data\Sort 1.Inputs[Sort Input].Columns[MONTH]"
+                      cachedDataType="numeric"
+                      cachedName="MONTH"
+                      cachedPrecision="2"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[MONTH]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Aggregation Data\Sort 1.Inputs[Sort Input].Columns[MONTH_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="MONTH_NAME"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[MONTH_NAME]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Aggregation Data\Sort 1.Inputs[Sort Input].Columns[Week]"
+                      cachedDataType="numeric"
+                      cachedName="Week"
+                      cachedPrecision="2"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[Week]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">5</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Aggregation Data\Sort 1.Inputs[Sort Input].Columns[CITY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CITY"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[CITY]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">6</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Aggregation Data\Sort 1.Inputs[Sort Input].Columns[Store name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="Store name"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[Store name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">7</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Aggregation Data\Sort 1.Inputs[Sort Input].Columns[Sales Revenue]"
+                      cachedDataType="numeric"
+                      cachedName="Sales Revenue"
+                      cachedPrecision="13"
+                      cachedScale="2"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[Sales Revenue]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Aggregation Data\Sort 1.Inputs[Sort Input].Columns[QUANTITY_SOLD]"
+                      cachedDataType="numeric"
+                      cachedName="QUANTITY_SOLD"
+                      cachedPrecision="13"
+                      cachedScale="2"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[QUANTITY_SOLD]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Aggregation Data\Sort 1.Inputs[Sort Input].Columns[MARGIN]"
+                      cachedDataType="numeric"
+                      cachedName="MARGIN"
+                      cachedPrecision="13"
+                      cachedScale="2"
+                      lineageId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[MARGIN]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Aggregation Data\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[YEAR]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[YEAR]"
+                      name="YEAR"
+                      precision="4"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[YEAR]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[Quarter]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[Quarter]"
+                      name="Quarter"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[Quarter]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[MONTH]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[MONTH]"
+                      name="MONTH"
+                      precision="2"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[MONTH]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[MONTH_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[MONTH_NAME]"
+                      name="MONTH_NAME"
+                      sortKeyPosition="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[MONTH_NAME]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[Week]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[Week]"
+                      name="Week"
+                      precision="2"
+                      sortKeyPosition="5">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[Week]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[CITY]"
+                      name="CITY"
+                      sortKeyPosition="6">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[CITY]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[Store name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[Store name]"
+                      name="Store name"
+                      sortKeyPosition="7">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[Store name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[Sales Revenue]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[Sales Revenue]"
+                      name="Sales Revenue"
+                      precision="13"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[Sales Revenue]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[QUANTITY_SOLD]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[QUANTITY_SOLD]"
+                      name="QUANTITY_SOLD"
+                      precision="13"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[QUANTITY_SOLD]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[MARGIN]"
+                      dataType="numeric"
+                      lineageId="Package\Aggregation Data\Sort 1.Outputs[Sort Output].Columns[MARGIN]"
+                      name="MARGIN"
+                      precision="13"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1].Columns[MARGIN]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Aggregation Data.Paths[Aggregate Output 1]"
+              endId="Package\Aggregation Data\Sort.Inputs[Sort Input]"
+              name="Aggregate Output 1"
+              startId="Package\Aggregation Data\Aggregate.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\Aggregation Data.Paths[Aggregate Output 11]"
+              endId="Package\Aggregation Data\Sort 1.Inputs[Sort Input]"
+              name="Aggregate Output 1"
+              startId="Package\Aggregation Data\Aggregate 1.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\Aggregation Data.Paths[Multicast Output 1]"
+              endId="Package\Aggregation Data\Aggregate.Inputs[Aggregate Input 1]"
+              name="Multicast Output 1"
+              startId="Package\Aggregation Data\Multicast.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\Aggregation Data.Paths[Multicast Output 2]"
+              endId="Package\Aggregation Data\Aggregate 1.Inputs[Aggregate Input 1]"
+              name="Multicast Output 2"
+              startId="Package\Aggregation Data\Multicast.Outputs[Multicast Output 2]" />
+            <path
+              refId="Package\Aggregation Data.Paths[OLE DB Source Output]"
+              endId="Package\Aggregation Data\Multicast.Inputs[Multicast Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\Aggregation Data\Collect Emode Data MS.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Aggregation Data.Paths[Sort Output]"
+              endId="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Aggregation Data\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Aggregation Data.Paths[Sort Output1]"
+              endId="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Aggregation Data\Sort 1.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Trancate AGG tables"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{69F9BB60-4064-4EF7-8920-B1342B39B6F1}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Trancate AGG tables">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Trancate AGG tables\truncate AGG_YR_QT_RN_ST_LN_CA_SR"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{A30012CB-C15E-43DC-93E6-0C565AB10D26}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="truncate AGG_YR_QT_RN_ST_LN_CA_SR"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{70D87222-9BEE-48FA-A8FE-AD6CB940FE04}"
+              SQLTask:SqlStatementSource="truncate table AGG_YR_QT_RN_ST_LN_CA_SR;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Trancate AGG tables\truncate AGG_YR_THRU_SN_SR_QT_MA"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{150CE8C9-F14C-4DBA-9BD7-9D8FADE47213}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="truncate AGG_YR_THRU_SN_SR_QT_MA"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{70D87222-9BEE-48FA-A8FE-AD6CB940FE04}"
+              SQLTask:SqlStatementSource="truncate table AGG_YR_THRU_SN_SR_QT_MA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Trancate AGG tables.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{2C638B1C-8082-464E-A06D-D1B19ECCA885}"
+          DTS:From="Package\Trancate AGG tables\truncate AGG_YR_QT_RN_ST_LN_CA_SR"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Trancate AGG tables\truncate AGG_YR_THRU_SN_SR_QT_MA" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{A924647F-6752-4C80-8091-9894E22DB941}"
+      DTS:From="Package\Trancate AGG tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Aggregation Data" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="273,42"
+          Id="Package\Trancate AGG tables\truncate AGG_YR_QT_RN_ST_LN_CA_SR"
+          TopLeft="32,15" />
+        <NodeLayout
+          Size="257,48"
+          Id="Package\Trancate AGG tables\truncate AGG_YR_THRU_SN_SR_QT_MA"
+          TopLeft="36,93" />
+        <EdgeLayout
+          Id="Package\Trancate AGG tables.PrecedenceConstraints[Constraint]"
+          TopLeft="166.5,57">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="336,196"
+          Size="336,239"
+          Id="Package\Trancate AGG tables"
+          TopLeft="245,25" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Aggregation Data"
+          TopLeft="340,325" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="416.75,264">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Aggregation Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Aggregation Data\Collect Emode Data MS"
+          TopLeft="104,13" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Aggregation Data\Multicast"
+          TopLeft="140,92" />
+        <EdgeLayout
+          Id="Package\Aggregation Data.Paths[OLE DB Source Output]"
+          TopLeft="199.25,55">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="127,42"
+          Id="Package\Aggregation Data\Aggregate"
+          TopLeft="33,171" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\Aggregation Data\Aggregate 1"
+          TopLeft="258,180" />
+        <EdgeLayout
+          Id="Package\Aggregation Data.Paths[Multicast Output 1]"
+          TopLeft="200,134">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-103.5,37"
+              Start="0,0"
+              End="-103.5,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="-4,18.5" />
+                  <mssgle:LineSegment
+                    End="-99.5,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-99.5,18.5"
+                    Point2="-103.5,18.5"
+                    Point3="-103.5,22.5" />
+                  <mssgle:LineSegment
+                    End="-103.5,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Aggregation Data.Paths[Multicast Output 2]"
+          TopLeft="218.666666666667,134">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="107.333333333333,46"
+              Start="0,0"
+              End="107.333333333333,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.7631578947368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.7631578947368"
+                    Point2="0,18.7631578947368"
+                    Point3="4,18.7631578947368" />
+                  <mssgle:LineSegment
+                    End="103.333333333333,18.7631578947368" />
+                  <mssgle:CubicBezierSegment
+                    Point1="103.333333333333,18.7631578947368"
+                    Point2="107.333333333333,18.7631578947368"
+                    Point3="107.333333333333,22.7631578947368" />
+                  <mssgle:LineSegment
+                    End="107.333333333333,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Aggregation Data\Sort"
+          TopLeft="50,253" />
+        <EdgeLayout
+          Id="Package\Aggregation Data.Paths[Aggregate Output 1]"
+          TopLeft="97.75,213">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Aggregation Data\Sort 1"
+          TopLeft="270,254" />
+        <EdgeLayout
+          Id="Package\Aggregation Data.Paths[Aggregate Output 11]"
+          TopLeft="324.75,222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR"
+          TopLeft="16,351" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA"
+          TopLeft="259,346" />
+        <EdgeLayout
+          Id="Package\Aggregation Data.Paths[Sort Output]"
+          TopLeft="100.25,295">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56"
+              Start="0,0"
+              End="0,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Aggregation Data.Paths[Sort Output1]"
+          TopLeft="323.5,296">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="25.5,50"
+              Start="0,0"
+              End="25.5,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
+                  <mssgle:LineSegment
+                    End="21.5,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.5,25"
+                    Point2="25.5,25"
+                    Point3="25.5,29" />
+                  <mssgle:LineSegment
+                    End="25.5,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Aggregation Data\Collect Emode Data MS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Aggregation Data\AGG_YR_QT_RN_ST_LN_CA_SR">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Aggregation Data\AGG_YR_THRU_SN_SR_QT_MA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
